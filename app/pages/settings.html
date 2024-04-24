@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ticos-Ride-Config</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../public/styles/dashboard.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col d-flex justify-content-start flex-row">
+        <div class="d-flex flex-column">
+          <div class="p-2">
+            <img class="image-size" src="../public/img/logo.png" alt="Car Travel Image">
+          </div>
+          <div class="p-2">
+
+            <div class="relative" style="display: flex;">
+              <a class="menu-item active" href="dashboard.php" id="dashboard">Dashboard</a>
+              <a class="menu-item" href="create_ride.php" id="rides">Rides</a>
+              <a class="menu-item" href="settings.html" id="config">Settings</a>
+            </div>
+          </div>
+          <div class="p-2">
+            <h4 id="currentSection"></h4>
+          </div>
+        </div>
+
+
+      </div>
+      <div class="col d-flex justify-content-end mt-auto p-2">
+        Welcome &nbsp;
+        <p id="username"></p>
+        <img class="image-user" src="../public/img/user.png" alt="Car Travel Image">
+      </div>
+    </div>
+
+
+
+    <h2>Settings</h2>
+
+    <div id="rides-view">
+
+      <a href="dashboard.html">Dashboard</a>
+      <span class="arrow">></span>
+      <a href="configuration.html">Settings</a>
+
+
+    </div>
+
+    <div id="settings-view">
+      <br>
+      <div class="row justify-content-center align-items-center g-2">
+        <div class="col"><label for="fullName" class="form-label">Full Name</label>
+          <input type="text" class="form-control" id="fullName" placeholder="Input text">
+          <br>
+        </div>
+
+      </div>
+
+      <div class="row justify-content-center align-items-center g-2">
+        <div class="col"><label for="speedAvarage" class="form-label">Speed Avarage</label>
+          <input type="text" class="form-control" id="speedAvarage" placeholder="Input text">
+          <br>
+        </div>
+
+      </div>
+
+      <div class="row-cols-md-4 justify-content-center align-items-center g-2">
+        <label for="aboutMe" class="form-label">About Me</label>
+        <div class="aboutMe">
+          <textarea id="edit" placeholder="Something about me goes here"></textarea>
+
+        </div>
+
+      </div>
+
+
+      <br>
+      <br>
+      <br>
+      <div class="row justify-content-center align-items-center g-2">
+        <div class="col"><a href="dashboard.php">Cancel</a></div>
+        <div class="col"><button class="save">Add</button></div>
+      </div>
+    </div>
+
+
+
+    <script type="text/javascript" src="../js/dashboard.js"></script>
+
+</body>
+
+</html>

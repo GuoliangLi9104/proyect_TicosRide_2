@@ -1,0 +1,225 @@
+.image-size {
+    height: 100px;
+    width: 50%;
+    ;
+}
+
+.image-user {
+    width: 35px;
+    height: 35px;
+}
+
+.menu-item {
+    font-weight: bold;
+    color: #636363;
+    border: 1px solid #636363;
+    padding-left: 8px;
+    padding-right: 8px;
+    background-color: #dadada;
+}
+
+#dashboard {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.card {
+    padding: 10px;
+    /* Add padding around the content within the card */
+}
+
+.col {
+    width: 32%;
+    /* Adjust width as needed */
+    margin: 0 5px;
+    /* Add left and right margin */
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    /* Space elements evenly */
+    align-items: center;
+    /* Vertically align elements */
+}
+
+#rides {
+    border-right: 0px solid;
+    border-left: 0px solid;
+}
+
+#settings {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+
+.settings {
+    width: 50%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.edit textarea {
+    width: 100%;
+    height: 200px;
+    margin-bottom: 20px;
+    border-color: black;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.save {
+    background-color: rgb(38, 188, 38);
+    color: white;
+    padding: 3px 20px;
+    /*Curvas en los botones  */
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+
+
+}
+
+.active {
+    background-color: white;
+}
+
+#username {
+    color: orange;
+    font-weight: bold;
+}
+
+.info-rides {
+    margin-top: 5%;
+    margin-left: 11%;
+}
+
+
+
+.info .form-label:nth-child(3) {
+    font-size: 18px;
+
+}
+
+.info-rides .form-label:nth-child(5) {
+    margin: 0 auto;
+    /* Centra horizontalmente */
+}
+
+.description {
+    max-width: 600px;
+    /* Cambia el valor para hacerlo más estrecho */
+    width: 100%;
+    /* Ajusta el ancho al 100% para que se adapte al contenedor */
+    margin: 0 auto;
+    /* Centra horizontalmente */
+}
+
+
+.description textarea {
+    width: 100%;
+    height: 200px;
+    margin-bottom: 20px;
+    resize: none;
+    border-color: black;
+    margin-left: -4%;
+}
+
+.description.buttons {
+    justify-content: space-between;
+}
+
+.description .save {
+    margin-left: 28%;
+    background-color: green;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    top: 10px;
+}
+
+.description h3 {
+    margin-left: -5%;
+}
+
+.cancel {
+    position: relative;
+    top: 100px;
+}
+
+.buttons-container {
+    display: flex;
+    /* Enables flexbox layout */
+}
+
+.login {
+    align-items: end;
+}
+
+#login {
+    position: absolute;
+    /* Hace que el botón se mantenga en una posición fija */
+    top: 20px;
+    /* Establece el botón a 20px desde el borde superior */
+    right: 20px;
+    /* Establece el botón a 20px desde el borde derecho */
+}
+
+.login-container {
+    position: fixed;
+    /* Makes the container fixed at the bottom */
+    bottom: 20px;
+    /* Sets the container 20px from the bottom edge */
+    width: 100%;
+    /* Sets the container width to 100% */
+    display: grid;
+    /* Enables CSS Grid layout */
+    grid-template-columns: repeat(2, 1fr);
+    /* Creates two columns */
+    gap: 10px;
+    /* Adds a gap between the columns */
+}
+
+
+
+/* Estilos para tamaños de pantalla pequeños */
+@media only screen and (max-width: 768px) {
+    .image-size {
+        height: auto;
+        /* Cambiar a altura automática para que se ajuste proporcionalmente */
+        width: 100%;
+        /* Cambiar a ancho completo para que ocupe todo el contenedor */
+    }
+
+    .info-rides {
+        margin-top: 5%;
+        margin-left: 5%;
+        /* Ajustar el margen izquierdo para centrarlo mejor */
+    }
+
+    .description {
+        max-width: 100%;
+        /* Cambiar a ancho completo para que ocupe todo el contenedor */
+        width: 90%;
+        /* Reducir ligeramente el ancho para que no se vea demasiado grande */
+        margin: 0 auto;
+    }
+
+    .description .save {
+        margin-left: 0;
+        /* Centrar el botón de guardado */
+        margin-top: 10px;
+        /* Añadir margen superior para separarlo del texto */
+    }
+
+    .description h3 {
+        margin-left: 0;
+        /* Centrar el título */
+    }
+}

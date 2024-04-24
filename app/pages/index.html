@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticos-Ride-Dashboard-Pricipal-page</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../public/styles/principalPage.css">
+
+
+</head>
+
+<body>
+    <div class="button">
+        <a id="login" href="login.html" class="save">Login</a>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col d-flex justify-content-start flex-row">
+                <div class="d-flex flex-column">
+                    <div class="p-2">
+                        <img class="image-size" src="../public/img/logo.png" alt="Car Travel Image">
+                    </div>
+
+                    <div class="p-2">
+                    </div>
+                </div>
+            </div>
+            <div class="col d-flex justify-content-end mt-auto p-2">
+                Welcome &nbsp;
+                <p id="username"></p>
+                <img class="image-user" src="../public/img/user.png" alt="Car Travel Image">
+            </div>
+        </div>
+        <div class="row justify-content-center align-items-center g-2">
+            <div class="col">
+                <h2>Welcome to TicoRides.com</h2>
+                <br>
+                <br>
+                <br>
+            </div>
+
+        </div>
+
+        <div id="panel-view" class="table-container">
+
+            <h6>Search for a ride</h6>
+            <div class="card">
+                <div class="row justify-content-center align-items-center g-2">
+                    <div class="col-5 d-flex align-items-center"> <span>From</span> <input type="text"
+                            class="form-control ms-2" id="from" placeholder="Input text"> <button type="button"
+                            class="btn btn-primary" onclick="window.location.href='https://www.google.com/maps'">
+                            Map</button> </div>
+                    <div class="col-5 d-flex align-items-center">
+                        <span>To</span>
+                        <input type="text" class="form-control ms-2" id="to" placeholder="Input text">
+                        <button type="button" class="btn btn-primary"
+                            onclick="window.location.href='https://www.google.com/maps'"> Map</button>
+                    </div>
+                    <div class="col"><button class="save">Find my Ride!</button></div>
+                </div>
+            </div>
+
+            <br>
+            <br>
+        </div>
+
+        <div id="settings-view">
+            <h4>Result for Rides that matches your criteria:</h4>
+            <div class="settings">
+                <table id="ViajesRegistrados" class="table table-bordered table-striped mt-4">
+                    <thead class="thead-light">
+                        <tr>
+                            <th>Name</th>
+                            <th>Start</th>
+                            <th>End</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Brete</td>
+                            <td>Barrio Los Angeles</td>
+                            <td>Ciudad Quesada</td>
+                            <td>
+                                <a href="see-ride.html">View</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Casa</td>
+                            <td>Ciudad Quesada</td>
+                            <td>Los Angeles</td>
+                            <td>
+                                <a href="see-ride.html">View</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Oficina Chepe</td>
+                            <td>Ciudad Quesada</td>
+                            <td>San Pedro</td>
+                            <td>
+                                <a href="see-ride.html">View</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="button">
+                    <a href="dashboard.html">Cancel</a>
+                    <button class="save">Add</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+</body>
+
+</html>

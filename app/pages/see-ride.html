@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticos-Ride-rides-See</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../styles/dashboard.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col d-flex justify-content-start flex-row">
+                <div class="d-flex flex-column">
+                    <div class="p-2">
+                        <img class="image-size" src="img/logo.png" alt="Car Travel Image">
+                    </div>
+                    <div class="p-2">
+                        <div class="relative" style="display: flex;">
+                            <a class="menu-item" href="dashboard.html" id="dashboard">Dashboard</a>
+                            <a class="menu-item active" href="ride.html" id="rides">Rides</a>
+                            <a class="menu-item" href="configuration.html" id="config">Settings</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col d-flex justify-content-end mt-auto p-2">
+                Welcome &nbsp;
+                <p id="username"></p>
+                <img class="image-user" src="../img/user.jpg" alt="Car Travel Image">
+            </div>
+        </div>
+
+        <h2>Rides</h2>
+
+        <div id="rides-view">
+            <a href="dashboard.html">Dashboard</a>
+            <span class="arrow">></span>
+            <a href="ride.html">Rides</a>
+        </div>
+
+        <div id="settings-view">
+            <br>
+            <div class="row justify-content-center align-items-center g-2">
+                <div class="col">
+                    <label for="fullname" class="form-label">Ride Name</label>
+                    <input type="text" class="form-control" id="fullname" placeholder="Input text" readonly>
+                    <br>
+                </div>
+            </div>
+            <div class="row justify-content-center align-items-center g-2">
+                <div class="col">
+                    <label for="start" class="form-label">Start From</label>
+                    <input type="text" class="form-control" id="start" placeholder="Input text" readonly>
+                    <button type="button" class="btn btn-primary" onclick="window.location.href='https://www.google.com/maps'"> Map</button>
+                    <br>
+                </div>
+                <div class="col">
+                    <label for="end" class="form-label">End</label>
+                    <input type="text" class="form-control" id="end" placeholder="Input text" readonly>
+                    <button type="button" class="btn btn-primary" onclick="window.location.href='https://www.google.com/maps'"> Map</button>
+                    <br>
+                </div>
+            </div>
+
+            <div class="row-cols-md-4 justify-content-center align-items-center g-2">
+                <label for="aboutMe" class="form-label">Destination</label>
+                <div class="aboutMe">
+                    <textarea id="aboutMe" placeholder="Something about me goes here" readonly></textarea>
+                </div>
+            </div>
+
+            <hr>
+            <h2>When</h2>
+
+            <div class="row justify-content-center align-items-center g-2">
+                <div class="col">
+                    <label for="departure" class="form-label">Departure</label>
+                    <input type="time" class="form-control" id="departure" placeholder="Input text" readonly>
+                    <br>
+                    <div> <label for="arrival" class="form-label">Estimated Arrival</label>
+                        <input type="time" class="form-control" id="arrival" placeholder="Input text" readonly>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <h3>Sectect Days</h3>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="monday">
+                        <label class="form-check-label" for="monday">
+                            Monday
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="tuesday" checked>
+                        <label class="form-check-label" for="tuesday">
+                            Tuesday
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="wednesday" checked>
+                        <label class="form-check-label" for="wednesday">
+                            Wednesday
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="thuerday" checked>
+                        <label class="form-check-label" for="thuerday">
+                            Thuerday
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                        <label class="form-check-label" for="flexCheckChecked">
+                            Friday
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="saturday" checked>
+                        <label class="form-check-label" for="saturday">
+                            Saturday
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="sunday" checked>
+                        <label class="form-check-label" for="sunday">
+                            Sunday
+                        </label>
+                    </div>
+                </div>
+
+            <br>
+            <br>
+            <br>
+            <div class="row justify-content-center align-items-center g-2">
+                <div class="col"><a href="dashboard.html">Cancel</a></div>
+                <div class="col"><button class="save">Add</button></div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
