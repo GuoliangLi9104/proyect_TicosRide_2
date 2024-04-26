@@ -25,42 +25,41 @@
                     <div class="card fat">
                         <div class="card-body">
                             <h4 class="card-title">Register</h4>
-                            <form method="POST" class="my-login-validation" novalidate="">
+                            <form method="POST" action="../functions/actions/users/addUser.php">
 
                                 <div class="form-floating">
-                                    <input type="text" class="form-control" id="firstName" placeholder="text">
+                                    <input type="text" class="form-control" id="name" name="name" placeholder="text" required>
                                     <label for="firstName">First Name</label>
                                     <br>
                                 </div>
 
                                 <div class="form-floating">
-                                    <input type="text" class="form-control" id="lastName" placeholder="text">
+                                    <input type="text" class="form-control" id="last_Name" name="last_Name" placeholder="text" required>
                                     <label for="lastName">Last Name</label>
                                     <br>
                                 </div>
 
                                 <div class="form-floating">
-                                    <input type="tel" class="form-control" id="phone" placeholder="Phone">
+                                    <input type="tel" class="form-control" id="phone" name="phone" placeholder="Phone" required>
                                     <label for="phone">Phone</label>
                                     <br>
                                 </div>
                                 
 
                                 <div class="form-floating">
-                                    <input type="text" class="form-control" id="username" placeholder="text">
+                                    <input type="text" class="form-control" id="username" name="username" placeholder="text" required>
                                     <label for="username">Username</label>
                                     <br>
                                 </div>
 
                                 <div class="form-floating">
-                                    <input type="password" class="form-control" id="password" placeholder="password">
+                                    <input type="password" class="form-control" id="password" name="password" placeholder="password" required>
                                     <label for="password">Password</label>
                                     <br>
                                 </div>
 
                                 <div class="form-floating">
-                                    <input type="password" class="form-control" id="repitPassword"
-                                        placeholder="password">
+                                    <input type="password" class="form-control" id="repitPassword" name="repitPassword" placeholder="password" required>
                                     <label for="repitPassword">Repeat Password</label>
                                     <br>
                                 </div>

@@ -46,7 +46,7 @@
             <br>
             <h2>Rides info</h2>
             <br>
-            <form action="../functions/addRide.php" method="post">
+            <form action="../functions/actions/rides/addRide.php" method="post">
                 <div class="row justify-content-center align-items-center g-2">
                     <div class="col"><label for="fullname" class="form-label">Ride Name</label>
                         <input type="text" class="form-control" id="rideName" name="rideName" required>
