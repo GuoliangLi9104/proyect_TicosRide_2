@@ -41,7 +41,10 @@ $stmt->execute(['user_id' => $user_id]); // Correctamente enlazar el parámetro 
                                 <!-- Pass ride ID to editRides.php -->
                                 <a href="edit_ride.php?rideId=<?php echo $ride['id']; ?>" class="btn btn-primary">Edit</a>
                                 <!-- Add delete functionality -->
-                                <a href="/actions/deleteRide.php?rideId=<?php echo $ride['id']; ?>" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this ride?');">Delete</a>
+                                <form action="/functions/actions/rides/deleteRide.php" method="POST" onsubmit="return confirm('Are you sure you want to delete this ride?');">
+                                    <input type="hidden" name="rideId" value="<?php echo $ride['id']; ?>">
+                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                </form>
                             </td>
                         </tr>
                     <?php endwhile; ?>

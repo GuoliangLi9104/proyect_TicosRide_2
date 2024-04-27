@@ -1,3 +1,22 @@
+<?php
+require_once $_SERVER['DOCUMENT_ROOT'].'/utils/database.php';
+require_once $_SERVER['DOCUMENT_ROOT'].'/models/rides.php';
+require_once $_SERVER['DOCUMENT_ROOT'].'/models/users.php';
+
+$rides = array();
+// Se verifica si la solicitud HTTP es de tipo POST.
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Se obtienen los valores de los parámetros 'from' y 'to' enviados a través del formulario html
+    $from = $_POST['from'];
+    $to = $_POST['to'];
+    // Se llama a la función searchRides($from, $to) con los valores de $from y $to como argumentos para buscar "rides"
+    $rides = searchRides($from, $to);
+} else {
+     // Si la solicitud no es de tipo POST, se llaman a la función getRides() 
+    $rides = getRides();
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -67,9 +86,18 @@
             <h4>Result for Rides that matches your criteria:</h4>
             <div class="settings">
                  <!-- Include the PHP file to show the list of rides -->
-            <?php include($_SERVER['DOCUMENT_ROOT'] . '/utils/showRidesInfo.php'); ?>
+                 <?php foreach ($rides as $ride) {
+                                $user = getUserById($ride['user_id']);
+                                $username = $user['username'];
 
-
+                                echo "<tr>";
+                                echo "<td>{$username}</td>";
+                                echo "<td>{$ride['start']}</td>";
+                                echo "<td>{$ride['end']}</td>";
+                                echo "<td><a href='/pages/view.php?id={$ride['id']}' class='btn btn-second btn-sm'>View</a></td>"; 
+                                echo "</tr>";
+                            }
+                ?>
 
 </body>
 

@@ -1,24 +1,30 @@
 <?php
-//check if a ride ID has been sent
-if (isset($_GET['rideId'])) {
-    //Delete the ride
+// Iniciar la sesión
+session_start();
+
+// Verificar si un rideId ha sido enviado y que la solicitud es POST
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['rideId'])) {
+    // Eliminar el ride
     require_once($_SERVER['DOCUMENT_ROOT'] . '/utils/database.php');
     $pdo = get_pdo_connection();
 
-    $rideId = $_GET['rideId'];
+    $rideId = $_POST['rideId'];
     $sql = "DELETE FROM rides WHERE id = ?";
     $stmt = $pdo->prepare($sql);
     if ($stmt->execute([$rideId])) {
-        echo "Ride deleted successfully"; // Temporal para prueba
-        header("Location:/pages/dashboard.php");
+        $_SESSION['message'] = "Ride deleted successfully";
+        header("Location: /pages/dashboard.php");
         exit();
-    
-    
     } else {
-        //If there is an error in deletion, display an error message
-        echo "Error: Could not delete ride.";
+        // Si hay un error en la eliminación, mostrar un mensaje de error
+        $_SESSION['error'] = "Error: Could not delete ride.";
+        header("Location: /pages/dashboard.php");
+        exit();
     }
 } else {
-    //If no ride ID was provided, display an error message
-    echo "Error: Ride ID not provided.";
+    // Si no se proporcionó rideId, mostrar un mensaje de error
+    $_SESSION['error'] = "Error: Ride ID not provided.";
+    header("Location: /pages/dashboard.php");
+    exit();
 }
+?>

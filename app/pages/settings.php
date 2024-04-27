@@ -38,9 +38,15 @@ $aboutMe = $profile['about_me'];
   <title>Ticos-Ride-Config</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <link rel="stylesheet" href="../public/styles/dashboard.css">
+  <link rel="stylesheet" href="../public/styles/principalPage.css">
+
+
 </head>
 
 <body>
+    <div class="button">
+        <a id="login" href="index.php" class="save">Log out</a>
+    </div>
   <div class="container">
     <div class="row">
       <div class="col d-flex justify-content-start flex-row">
