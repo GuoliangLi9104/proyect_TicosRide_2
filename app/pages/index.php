@@ -87,7 +87,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <div class="settings">
                  <!-- Include the PHP file to show the list of rides -->
                  <?php foreach ($rides as $ride) {
-                                $user = getUserById($ride['user_id']);
+                                $user = get_user_by_id($ride['user_id']);
                                 $username = $user['username'];
 
                                 echo "<tr>";

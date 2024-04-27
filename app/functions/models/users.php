@@ -2,19 +2,7 @@
 require_once ($_SERVER['DOCUMENT_ROOT'] . '/utils/database.php');
 require_once($_SERVER['DOCUMENT_ROOT'] . '/utils/database.php');
 
-/*function authenticate($username, $password) {
-  $conn = get_pdo_connection();
-  $password = md5($password);
-  $query = "SELECT * FROM users where username = '$username' AND password='$password'";
-  $result = $conn->query($query);
-  if ($result && $result->num_rows > 0) {
-    $user = $result->fetch_assoc();
-    return $user;
-  } else {
-    return false;
-  }
 
-}*/
 
 function authenticate($username, $password) {
   
@@ -34,39 +22,6 @@ function authenticate($username, $password) {
 }
 
 
-/*function get_user_by_id($user_id) {
-  $conn = get_pdo_connection();
-  $query = "SELECT * FROM users WHERE id=?";
-  $stmt = $conn->prepare($query);
-  $stmt->bind_param("i", $user_id);
-  $stmt->execute();
-  $result = $stmt->get_result();
-
-  if($result && $result->num_rows > 0 ){
-    $user = $result->fetch_assoc();
-    return $user;
-  } else {
-    return null;
-  }
-}*/
-
-/*function get_user_by_id($user_id) {
-  $conn = get_pdo_connection();
-  $query = "SELECT * FROM users WHERE id = :user_id";
-  $stmt = $conn->prepare($query);
-  
-  // Usar execute con un array asociativo para enlazar los parámetros
-  $stmt->execute(['user_id' => $user_id]);
-  
-  // Usar fetch() para obtener el usuario
-  $user = $stmt->fetch(PDO::FETCH_ASSOC);
-
-  if ($user) {
-      return $user;
-  } else {
-      return null;
-  }
-}*/
 function get_user_by_id($user_id) {
   // Asegurarte de que la conexión a la base de datos es accesible
   $conn = get_pdo_connection();
