@@ -29,9 +29,8 @@ $stmt->execute();
                             <td><?php echo $ride['end_to']; ?></td>
                             <td>
                                 <<!--Pass ride ID to editRides.php -->
-                                <a href="edit_ride.php?rideId=<?php echo $ride['id']; ?>" class="btn btn-primary">Edit</a>
+                                <a href="see-ride.php?rideId=<?php echo $ride['id']; ?>" class="btn btn-primary">View</a>
                                 <!-- Add delete functionality -->
-                                <a href="../functions/deleteRide.php?rideId=<?php echo $ride['id']; ?>" class="btn btn-danger" onclick="confirmDelete()">Delete</a>
                             </td>
                         </tr>
                     <?php endwhile; ?>

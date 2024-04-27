@@ -1,3 +1,16 @@
+<?php 
+
+session_start();
+
+if (isset($_SESSION['error'])) {
+    echo '<div style="color: red;">' . $_SESSION['error'] . '</div>';
+    unset($_SESSION['error']); // Limpiar el mensaje de error después de mostrarlo
+}
+
+
+?>
+
+
 <!doctype html>
 <html lang="en">
 
@@ -24,22 +37,20 @@
                     <div class="card fat">
                         <div class="card-body">
                             <h4 class="card-title">Login</h4>
-                            <form method="POST" class="my-login-validation" novalidate="">
+                            <form action="/functions/actions/users/login.php" method="POST">
                                 <div class="form-group">
-                                    <label for="email">Username</label>
-                                    <input id="email" type="email" class="form-control" name="email" value="" required
+                                    <label for="username">Username</label>
+                                    <input id="username" type="text" class="form-control" name="username"  required
                                         autofocus>
                                     <div class="invalid-feedback">
-                                        Email is invalid
+                                        Username is invalid
                                     </div>
                                 </div>
 
                                 <div class="form-group">
                                     <br>
                                     <label for="password">Password
-                                        <a href="#" class="float-right">
-                                            Forgot Password?
-                                        </a>
+                                       
                                     </label>
                                     <input id="password" type="password" class="form-control" name="password" required
                                         data-eye>
@@ -60,8 +71,8 @@
 
                                 <div class="form-group m-0">
                                     <br>
-                                    <button type="submit" href="dashboard.php" class="btn btn-primary btn-block">
-                                        <a class="whiteman" href="dashboard.php" style="color: white;">Login</a>
+                                    <button type="submit"  class="btn btn-primary btn-block">
+                                        <a class="whiteman"  style="color: white;">Login</a>
 
                                     </button>
                                 </div>

@@ -1,3 +1,34 @@
+<?php
+session_start();
+
+if (isset($_SESSION['success'])) {
+    echo '<div style="color: green;">' . $_SESSION['success'] . '</div>';
+    unset($_SESSION['success']); // Limpiar el mensaje de éxito después de mostrarlo
+}
+
+require_once($_SERVER['DOCUMENT_ROOT'] . '/utils/database.php');
+$pdo = get_pdo_connection();
+
+// Check if the user is not logged in, redirect to login page
+if (!isset($_SESSION['user_id'])) {
+    header("Location: login.php");
+    exit;
+}
+
+// Assuming you have a function or method to fetch user details
+require($_SERVER['DOCUMENT_ROOT'] . '/functions/models/users.php');
+$userDetails = get_user_by_id($_SESSION['user_id']);
+
+if (isset($_SESSION['message'])) {
+    echo "<p>" . $_SESSION['message'] . "</p>";
+    unset($_SESSION['message']);  // Limpia el mensaje después de mostrarlo
+}
+
+if (isset($_SESSION['error'])) {
+    echo "<p style='color:red;'>" . $_SESSION['error'] . "</p>";
+    unset($_SESSION['error']);  // Limpia el error después de mostrarlo
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,6 +41,8 @@
 
 
 </head>
+
+
 
 <body>
     <div class="background-image"></div>
@@ -24,7 +57,7 @@
                         <div class="relative" style="display: flex;">
                             <a class="menu-item active" href="dashboard.php" id="dashboard">Dashboard</a>
                             <a class="menu-item" href="create_ride.php" id="rides">Rides</a>
-                            <a class="menu-item" href="settings.html" id="config">Settings</a>
+                            <a class="menu-item" href="settings.php" id="config">Settings</a>
                         </div>
                     </div>
 
@@ -44,7 +77,8 @@
             <h2>My Rides</h2>
             <br>
             <!-- Include the PHP file to show the list of rides -->
-            <?php include($_SERVER['DOCUMENT_ROOT'] . '/utils/showRidesInfo.php'); ?>
+            <?php include($_SERVER['DOCUMENT_ROOT'] . '/utils/showRidesId.php'); ?>
+
         </div>
 
 

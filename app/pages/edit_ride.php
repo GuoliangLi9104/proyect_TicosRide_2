@@ -1,3 +1,28 @@
+<?php
+session_start();
+
+// Check if the user is not logged in, redirect to login page
+if (!isset($_SESSION['user_id'])) {
+    header("Location: login.php");
+    exit;
+}
+
+// Check if the user is not logged in, redirect to login page
+if (!isset($_SESSION['user_id'])) {
+    header("Location: login.php");
+    exit;
+}
+
+if (isset($_SESSION['message'])) {
+    echo "<p>" . $_SESSION['message'] . "</p>";
+    unset($_SESSION['message']);  // Limpia el mensaje después de mostrarlo
+}
+
+if (isset($_SESSION['error'])) {
+    echo "<p style='color:red;'>" . $_SESSION['error'] . "</p>";
+    unset($_SESSION['error']);  // Limpia el error después de mostrarlo
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -24,7 +49,7 @@
                         <div class="relative" style="display: flex;">
                             <a class="menu-item" href="dashboard.php" id="dashboard">Dashboard</a>
                             <a class="menu-item active" href="ride.php" id="rides">Rides</a>
-                            <a class="menu-item" href="settings.html" id="config">Settings</a>
+                            <a class="menu-item" href="settings.php" id="config">Settings</a>
                         </div>
 
                     </div>

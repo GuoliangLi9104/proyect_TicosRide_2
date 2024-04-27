@@ -10,8 +10,7 @@ CREATE TABLE IF NOT EXISTS users(
     last_name VARCHAR(255) NOT NULL,
     phone VARCHAR(255) NOT NULL,
     username VARCHAR(255) NOT NULL,
-    password VARCHAR(255) NOT NULL,
-    confirm_password VARCHAR(255) NOT NULL
+    password VARCHAR(255) NOT NULL
 );
 
 CREATE TABLE IF NOT EXISTS rides (
@@ -37,8 +36,8 @@ CREATE TABLE profile(
 )
 
 
-INSERT INTO users(name,last_name,phone,username,password,confirm_password)
-VALUES ('Rofrigo', 'Salas', 61813099, 'RoSal', 'Rosales123', 'Rosales123');
+INSERT INTO users(name,last_name,phone,username,password)
+VALUES ('Rofrigo', 'Salas', 61813099, 'RoSal', 'Rosales123');
 
 
 INSERT INTO rides (ride_name, start_from, end_to, description, departure_time, arrival_time, days, user_id) 
